@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Przeglady.Models;
 
 namespace Przeglady.Data
 {
@@ -12,5 +13,7 @@ namespace Przeglady.Data
             : base(options)
         {
         }
+        public DbSet<Przeglady.Models.Montaz> Montaz { get; set; }
+      
     }
 }

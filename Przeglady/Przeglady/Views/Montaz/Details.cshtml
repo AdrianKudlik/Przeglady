@@ -1,0 +1,103 @@
+﻿@model Przeglady.Models.Montaz
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Montaz</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Imie)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Imie)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwisko)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nazwisko)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nip)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nip)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Zaproszenie)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Zaproszenie)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Gwarancja)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Gwarancja)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataMontazu)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataMontazu)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataOstatniegoPrzegladu)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataOstatniegoPrzegladu)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Podreczniki)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Podreczniki)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ODOIA)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ODOIA)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SIGMA)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SIGMA)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Uwagi)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Uwagi)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
