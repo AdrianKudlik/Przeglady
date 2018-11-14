@@ -17,25 +17,14 @@ namespace Przeglady.Controllers
             return View();
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-          
-            return View();
-        }
-
         [Authorize(Policy = "Administrator")]
-        public IActionResult Contact()
+        public IActionResult Przeglady()
         {
             ViewData["Message"] = "Your contact page.";
 
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -38,7 +38,7 @@ namespace Przeglady
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-
+           
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultUI();
@@ -58,6 +58,7 @@ namespace Przeglady
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("Administrator", policy => policy.RequireRole("Admin"));
+                options.AddPolicy("Uzytkownik", policy => policy.RequireRole("User"));
             });
         }
         
