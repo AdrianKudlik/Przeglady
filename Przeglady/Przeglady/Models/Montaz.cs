@@ -25,11 +25,39 @@ namespace Przeglady.Models
         [DisplayName("Nazwisko")]
         public string Nazwisko { get; set; }
 
-        [DisplayName("Adres pracowni")]
-        public Adres AdresPracowni { get; set; }
 
-        [DisplayName("Adres montażu")]
-        public Adres AdresMontazu { get; set; }
+        //[DisplayName("Adres Pracowni")]
+
+        [DisplayName("Ulica")]
+        public string Ulica { get; set; }
+
+        [DisplayName("Kod pocztowy")]
+        public string Kod { get; set; }
+
+        [DisplayName("Miejscowość")]
+        public string Miejscowosc { get; set; }
+
+        [DisplayName("Województwo")]
+        public string Wojewodztwo { get; set; }
+
+
+        //[DisplayName("Adres montażu")]
+
+        [DisplayName("Ulica")]
+        public string Ulica2 { get; set; }
+
+        [DisplayName("Kod pocztowy")]
+        public string Kod2 { get; set; }
+
+        [DisplayName("Miejscowość")]
+        public string Miejscowosc2 { get; set; }
+
+        [DisplayName("Województwo")]
+        public string Wojewodztwo2 { get; set; }
+
+
+
+
 
         [Required(ErrorMessage = "Numer telefonu jest wymagany")]
         [DisplayName("Telefon")]
