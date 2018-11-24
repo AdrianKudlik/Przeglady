@@ -11,8 +11,9 @@ namespace Przeglady.Models
 
     public class Adres
     {
-        [Key]
-        public int Id { get; set; }
+       [Key]
+        public int ID { get; set; }
+
         [DisplayName("Ulica")]
         public string Ulica { get; set; }
 

@@ -1,13 +1,13 @@
 ﻿@model Przeglady.Models.Montaz
 
+
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Stwórz";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
+<h2>Stwórz</h2>
 
-<h4>Montaz</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -43,15 +43,21 @@
                 <input asp-for="Nip" class="form-control" />
                 <span asp-validation-for="Nip" class="text-danger"></span>
             </div>
+           
             <div class="form-group">
-                <label asp-for="Zaproszenie" class="control-label"></label>
-                <input asp-for="Zaproszenie" class="form-control" />
-                <span asp-validation-for="Zaproszenie" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Gwarancja" class="control-label"></label>
-                <input asp-for="Gwarancja" class="form-control" />
-                <span asp-validation-for="Gwarancja" class="text-danger"></span>
+                <label asp-for="Gwarancja" class="col-md-2 control-label"></label>
+                <select asp-for="Gwarancja"   
+                        class="form-control"   
+                        asp-items="@(new SelectList(new List<SelectListItem>
+                                     {
+                                         new SelectListItem { Value = "12 miesięcy", Text = "12 miesięcy" },
+                                         new SelectListItem { Value = "24 miesięcy", Text = "24 miesięcy" },
+                                         new SelectListItem { Value = "36 miesięcy", Text = "36 miesięcy"  },
+
+
+                                     },"Text","Value"))">  
+                </select>  
+              
             </div>
             <div class="form-group">
                 <label asp-for="DataMontazu" class="control-label"></label>
@@ -90,14 +96,14 @@
                 <span asp-validation-for="Uwagi" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Stwórz" class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-primary" asp-action="Index">Powrót</a>
 </div>
 
 @section Scripts {

@@ -59,6 +59,7 @@ namespace Przeglady.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Nazwa,Imie,Nazwisko,Telefon,Email,Nip,Zaproszenie,Gwarancja,DataMontazu,DataOstatniegoPrzegladu,Podreczniki,ODOIA,SIGMA,Uwagi")] Montaz montaz)
         {
+          
             if (ModelState.IsValid)
             {
                 _context.Add(montaz);
@@ -154,5 +155,7 @@ namespace Przeglady.Controllers
         {
             return _context.Montaz.Any(e => e.Id == id);
         }
+
+
     }
 }

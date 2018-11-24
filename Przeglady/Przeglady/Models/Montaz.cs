@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 
 namespace Przeglady.Models
@@ -40,19 +41,16 @@ namespace Przeglady.Models
         [DisplayName("NIP")]
         public string Nip { get; set; }
 
-        [DisplayName("Zaproszenie")]
-        public string Zaproszenie { get; set; }
-
         [DisplayName("Czas gwarancji")]
         public string Gwarancja { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+    //    [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         [DisplayName("Data montażu")]
         public DateTime DataMontazu { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+      //  [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         [DisplayName("Data ostatniego przeglądu")]
         public DateTime DataOstatniegoPrzegladu { get; set; }
 
@@ -69,6 +67,7 @@ namespace Przeglady.Models
         [DataType(DataType.MultilineText)]
         public string Uwagi { get; set; }
 
-     
+      
+
     }
 }
