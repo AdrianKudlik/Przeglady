@@ -31,7 +31,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Strona Główna</a></li>
-                   <li><a asp-area="" asp-controller="Montaz" asp-action="Index">Przeglądy</a></li>
+                    <li><a asp-area="" asp-controller="Montaz" asp-action="Index">Przeglądy</a></li>
+                    <li><a asp-area="" asp-controller="Map" asp-action="Index">Mapa</a></li>
                 </ul>
                 <partial name="_LoginPartial" />
             </div>
@@ -67,6 +68,9 @@
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVNt_dbFnBPSurQdOJ0GzQRQnKrReY3DI&callback=initMap">
+        </script>
     </environment>
 
     @RenderSection("Scripts", required: false)

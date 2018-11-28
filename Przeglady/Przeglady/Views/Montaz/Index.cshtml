@@ -25,6 +25,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.DataOstatniegoPrzegladu)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Miejscowosc2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wojewodztwo2)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -42,7 +48,12 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.DataOstatniegoPrzegladu)
                 </td>
-
+                <td>
+                    @Html.DisplayFor(modelItem => item.Miejscowosc2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Wojewodztwo2)
+                </td>
                 <td>
                     <a asp-action="Details" class="btn btn-primary" asp-route-id="@item.Id">Szczegóły</a>
 
