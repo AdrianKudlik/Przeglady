@@ -43,11 +43,99 @@
                 <input asp-for="Nip" class="form-control" />
                 <span asp-validation-for="Nip" class="text-danger"></span>
             </div>
-           
+            <div class="form-group">
+                <b>Adres Pracowni</b>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ulica" class="control-label"></label>
+                <input asp-for="Ulica" class="form-control" />
+                <span asp-validation-for="Ulica" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kod" class="control-label"></label>
+                <input asp-for="Kod" class="form-control" />
+                <span asp-validation-for="Kod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Miejscowosc" class="control-label"></label>
+                <input asp-for="Miejscowosc" class="form-control" />
+                <span asp-validation-for="Miejscowosc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Wojewodztwo" class="control-label"></label>
+                <select asp-for="Wojewodztwo"
+                        class="form-control"
+                        asp-items="@(new SelectList(new List<SelectListItem>
+                                     {
+                                         new SelectListItem { Value = "dolnośląskie", Text = "dolnośląskie" },
+                                         new SelectListItem { Value = "kujawsko-pomorskie", Text = "kujawsko-pomorskie" },
+                                         new SelectListItem { Value = "lubelskie", Text = "lubelskie" },
+                                         new SelectListItem { Value = "lubuskie", Text = "lubuskie"  },
+                                         new SelectListItem { Value = "łódzkie", Text = "łódzkie" },
+                                         new SelectListItem { Value = "małopolskie", Text = "małopolskie" },
+                                         new SelectListItem { Value = "mazowieckie", Text = "mazowieckie"},
+                                         new SelectListItem { Value = "opolskie", Text = "opolskie" },
+                                         new SelectListItem { Value = "podkarpackie",Text = "podkarpackie" },
+                                         new SelectListItem { Value = "podlaskie", Text = "podlaskie" },
+                                         new SelectListItem { Value = "pomorskie", Text = "pomorskie" },
+                                         new SelectListItem { Value = "śląskie", Text = "śląskie",  },
+                                         new SelectListItem { Value = "świętokrzyskie",  Text = "świętokrzyskie"   },
+                                         new SelectListItem { Value = "warmińsko-mazurskie", Text = "warmińsko-mazurskie" },
+                                         new SelectListItem { Value = "wielkopolskie",  Text = "wielkopolskie" },
+                                         new SelectListItem { Value = "zachodniopomorskie", Text = "zachodniopomorskie"  },
+
+                                     },"Text","Value"))"></select>
+
+            </div>
+
+            <div class="form-group">
+                <b>Adres Montażu</b>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ulica2" class="control-label"></label>
+                <input asp-for="Ulica2" class="form-control" />
+                <span asp-validation-for="Ulica2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kod2" class="control-label"></label>
+                <input asp-for="Kod2" class="form-control" />
+                <span asp-validation-for="Kod2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Miejscowosc2" class="control-label"></label>
+                <input asp-for="Miejscowosc2" class="form-control" />
+                <span asp-validation-for="Miejscowosc2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Wojewodztwo2" class="control-label"></label>
+                <select asp-for="Wojewodztwo2"
+                        class="form-control"
+                        asp-items="@(new SelectList(new List<SelectListItem>
+                                     {
+                                         new SelectListItem { Value = "dolnośląskie", Text = "dolnośląskie" },
+                                         new SelectListItem { Value = "kujawsko-pomorskie", Text = "kujawsko-pomorskie" },
+                                         new SelectListItem { Value = "lubelskie", Text = "lubelskie" },
+                                         new SelectListItem { Value = "lubuskie", Text = "lubuskie"  },
+                                         new SelectListItem { Value = "łódzkie", Text = "łódzkie" },
+                                         new SelectListItem { Value = "małopolskie", Text = "małopolskie" },
+                                         new SelectListItem { Value = "mazowieckie", Text = "mazowieckie"},
+                                         new SelectListItem { Value = "opolskie", Text = "opolskie" },
+                                         new SelectListItem { Value = "podkarpackie",Text = "podkarpackie" },
+                                         new SelectListItem { Value = "podlaskie", Text = "podlaskie" },
+                                         new SelectListItem { Value = "pomorskie", Text = "pomorskie" },
+                                         new SelectListItem { Value = "śląskie", Text = "śląskie",  },
+                                         new SelectListItem { Value = "świętokrzyskie",  Text = "świętokrzyskie"   },
+                                         new SelectListItem { Value = "warmińsko-mazurskie", Text = "warmińsko-mazurskie" },
+                                         new SelectListItem { Value = "wielkopolskie",  Text = "wielkopolskie" },
+                                         new SelectListItem { Value = "zachodniopomorskie", Text = "zachodniopomorskie"  },
+
+                                     },"Text","Value"))"></select>
+
+            </div>
             <div class="form-group">
                 <label asp-for="Gwarancja" class="control-label"></label>
-                <select asp-for="Gwarancja"   
-                        class="form-control"   
+                <select asp-for="Gwarancja"
+                        class="form-control"
                         asp-items="@(new SelectList(new List<SelectListItem>
                                      {
                                          new SelectListItem { Value = "12 miesięcy", Text = "12 miesięcy" },
@@ -55,9 +143,8 @@
                                          new SelectListItem { Value = "36 miesięcy", Text = "36 miesięcy"  },
 
 
-                                     },"Text","Value"))">  
-                </select>  
-              
+                                     },"Text","Value"))"></select>
+
             </div>
             <div class="form-group">
                 <label asp-for="DataMontazu" class="control-label"></label>
