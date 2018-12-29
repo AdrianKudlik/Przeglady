@@ -95,7 +95,12 @@ namespace Przeglady.Models
         [DataType(DataType.MultilineText)]
         public string Uwagi { get; set; }
 
-      
+        [DisplayName]
+        public double Longitude { get; set; }
+
+        [DisplayName]
+        public double Latitude { get; set; }
+
 
     }
 }

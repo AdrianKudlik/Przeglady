@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -75,6 +76,10 @@ namespace Przeglady
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
+            app.UseRequestLocalization();
+
+            CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
+            CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo("en-US");
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

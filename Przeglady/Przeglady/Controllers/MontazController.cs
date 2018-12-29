@@ -57,9 +57,9 @@ namespace Przeglady.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nazwa,Imie,Nazwisko,Telefon,Email,Nip,Ulica,Kod,Miejscowosc,Wojewodztwo,Ulica2,Kod2,Miejscowosc2,Wojewodztwo2,Zaproszenie,Gwarancja,DataMontazu,DataOstatniegoPrzegladu,Podreczniki,ODOIA,SIGMA,Uwagi")] Montaz montaz)
+        public async Task<IActionResult> Create([Bind("Id,Nazwa,Imie,Nazwisko,Telefon,Email,Nip,Ulica,Kod,Miejscowosc,Wojewodztwo,Ulica2,Kod2,Miejscowosc2,Wojewodztwo2,Zaproszenie,Gwarancja,DataMontazu,DataOstatniegoPrzegladu,Podreczniki,ODOIA,SIGMA,Uwagi,Latitude,Longitude")] Montaz montaz)
         {
-          
+            
             if (ModelState.IsValid)
             {
                 _context.Add(montaz);
@@ -90,7 +90,7 @@ namespace Przeglady.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nazwa,Imie,Nazwisko,Telefon,Email,Nip,Ulica,Kod,Miejscowosc,Wojewodztwo,Ulica2,Kod2,Miejscowosc2,Wojewodztwo2,Zaproszenie,Gwarancja,DataMontazu,DataOstatniegoPrzegladu,Podreczniki,ODOIA,SIGMA,Uwagi")] Montaz montaz)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nazwa,Imie,Nazwisko,Telefon,Email,Nip,Ulica,Kod,Miejscowosc,Wojewodztwo,Ulica2,Kod2,Miejscowosc2,Wojewodztwo2,Zaproszenie,Gwarancja,DataMontazu,DataOstatniegoPrzegladu,Podreczniki,ODOIA,SIGMA,Uwagi,Latitude,Longitude")] Montaz montaz)
         {
             if (id != montaz.Id)
             {

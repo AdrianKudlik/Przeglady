@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <title>Display a map</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
@@ -40,6 +39,7 @@
             color: #222;
             background-color: rgba(0, 0, 0, 0.0);
         }
+
         #dif {
             position: absolute;
             top: 70px;
@@ -51,20 +51,45 @@
     <div id="dif">
         <div id='map'></div>
         <pre id='info'></pre>
+        <pre id='info2'></pre>
     </div>
     <script>
-        mapboxgl.accessToken =
-            'pk.eyJ1Ijoia3JvbGlrMTE1IiwiYSI6ImNqcGs1azdsdDBlNmYzcXFpcWc4YWI2bTUifQ.JIZBLBRHPUuEC532LG2jvA';
+        mapboxgl.accessToken = 'pk.eyJ1Ijoia3JvbGlrMTE1IiwiYSI6ImNqcGs1azdsdDBlNmYzcXFpcWc4YWI2bTUifQ.JIZBLBRHPUuEC532LG2jvA';
         var map = new mapboxgl.Map({
-            container: 'map', // container id
-            style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
-            center: [20, 52], // starting position [lng, lat]
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            center: [20, 52],
+            zoom: 5.5
+        });
+        var geocoder = new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken
+        });
 
-            zoom: 5.5 // starting zoom
-        });
-        map.on('mousemove', function (e) {
-            document.getElementById('info').innerHTML =JSON.stringify(e.lngLat);
-        });
+        map.addControl(geocoder);
+        var items = [
+            [1, 2],
+            [3, 4],
+            [5, 6]
+        ];
+
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/Map/GetPoints');
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                items = xhr.responseText;
+                items = JSON.parse(items);
+                for (val of items) {
+                    var marker = new mapboxgl.Marker().setLngLat([val[0], val[1]]).addTo(map);
+            
+                }
+            }
+           
+        };
+        xhr.send();
+       
+       
+
         var nav = new mapboxgl.NavigationControl();
         map.addControl(nav, 'top-right');
 
@@ -75,19 +100,9 @@
             trackUserLocation: true
         }));
 
-
-
-           map.addControl(new MapboxDirections({
-               accessToken: mapboxgl.accessToken
-           }), 'top-left');
-           
-        var geocoder = new MapboxGeocoder({
+        map.addControl(new MapboxDirections({
             accessToken: mapboxgl.accessToken
-        });
-
-        map.addControl(geocoder)
-
-
+        }), 'top-left');
 
 
     </script>
