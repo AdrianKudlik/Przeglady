@@ -28,7 +28,7 @@ namespace Przeglady.Controllers
            
             var list = new List<double[]>();
 
-            foreach (var montaz in _context.Montaz.Where(s=>s.Longitude!=0))
+            foreach (var montaz in _context.Montaz.Where(s=>s.Longitude!=0).Where(s=>s.DataOstatniegoPrzegladu<DateTime.Today.AddMonths(-11)))
             {
                 list.Add(new []{montaz.Longitude,montaz.Latitude});
             }
