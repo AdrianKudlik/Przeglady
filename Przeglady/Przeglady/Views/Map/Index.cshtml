@@ -72,6 +72,20 @@
             [5, 6]
         ];
 
+        var nav = new mapboxgl.NavigationControl();
+        map.addControl(nav, 'top-right');
+
+        map.addControl(new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+            trackUserLocation: true
+        }));
+
+        map.addControl(new MapboxDirections({
+            accessToken: mapboxgl.accessToken
+        }), 'top-left');
+
 
         var xhr = new XMLHttpRequest();
         xhr.open('GET', '/Map/GetPoints');
@@ -90,19 +104,7 @@
        
        
 
-        var nav = new mapboxgl.NavigationControl();
-        map.addControl(nav, 'top-right');
-
-        map.addControl(new mapboxgl.GeolocateControl({
-            positionOptions: {
-                enableHighAccuracy: true
-            },
-            trackUserLocation: true
-        }));
-
-        map.addControl(new MapboxDirections({
-            accessToken: mapboxgl.accessToken
-        }), 'top-left');
+     
 
 
     </script>

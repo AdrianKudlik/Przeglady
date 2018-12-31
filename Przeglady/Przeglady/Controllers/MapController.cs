@@ -20,22 +20,23 @@ namespace Przeglady.Controllers
         }
         public IActionResult Index()
         {
-        
+
             return View();
         }
         public double[][] GetPoints()
         {
-           
+
             var list = new List<double[]>();
 
-            foreach (var montaz in _context.Montaz.Where(s=>s.Longitude!=0).Where(s=>s.DataOstatniegoPrzegladu<DateTime.Today.AddMonths(-11)))
+            foreach (var montaz in _context.Montaz
+                .Where(s => s.Longitude != 0 && s.DataOstatniegoPrzegladu < DateTime.Today.AddMonths(-11)))
             {
-                list.Add(new []{montaz.Longitude,montaz.Latitude});
+                list.Add(new[] { montaz.Longitude, montaz.Latitude });
             }
 
             return list.ToArray();
         }
 
-       
+
     }
 }
